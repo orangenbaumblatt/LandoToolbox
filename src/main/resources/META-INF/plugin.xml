@@ -6,14 +6,21 @@
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.orangenbaumblatt.landotoolbox.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.orangenbaumblatt.landotoolbox.services.MyProjectService"/>
+
+        <codeInsight.lineMarkerProvider language="yaml" implementationClass="com.github.orangenbaumblatt.landotoolbox.lineMarker.LandoRunLineMarkerContributor" />
+        <codeInsight.lineMarkerProvider language="yaml" implementationClass="com.github.orangenbaumblatt.landotoolbox.proxyLineMarker.ProxyLineMarkerContributor" />
     </extensions>
 
     <projectListeners>
         <listener class="com.github.orangenbaumblatt.landotoolbox.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </projectListeners>
+    <actions>
+
+    </actions>
 </idea-plugin>
