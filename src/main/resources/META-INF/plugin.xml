@@ -22,5 +22,9 @@
     </projectListeners>
     <actions>
 
+        <action id="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction"
+                class="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction" text="Run Lando Tooling Commands">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
     </actions>
 </idea-plugin>
