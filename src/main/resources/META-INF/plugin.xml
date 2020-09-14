@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.orangenbaumblatt.landotoolbox</id>
-    <name>LandoToolbox</name>
+    <name>Lando Toolbox</name>
     <vendor>orangenbaumblatt</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -24,7 +24,7 @@
 
         <action id="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction"
                 class="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction" text="Run Lando Tooling Commands">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>
 </idea-plugin>

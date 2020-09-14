@@ -1,4 +1,4 @@
-//import io.gitlab.arturbosch.detekt.Detekt
+// import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.changelog.closure
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -61,7 +61,7 @@ intellij {
 
 // Configure detekt plugin.
 // Read more: https://detekt.github.io/detekt/kotlindsl.html
-//detekt {
+// detekt {
 //    config = files("./detekt-config.yml")
 //    buildUponDefaultConfig = true
 //
@@ -70,7 +70,7 @@ intellij {
 //        xml.enabled = false
 //        txt.enabled = false
 //    }
-//}
+// }
 
 tasks {
     // Set the compatibility versions to 1.8
