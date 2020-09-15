@@ -22,11 +22,19 @@
         <listener class="com.github.orangenbaumblatt.landotoolbox.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </projectListeners>
-    <actions>
 
-        <action id="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction"
+    <actions>
+        <action id="landotoolbox.actions.LandoToolingAction"
                 class="com.github.orangenbaumblatt.landotoolbox.actions.LandoToolingAction" text="Run Lando Tooling Commands">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
+        <action id="landotoolbox.actions.LandoStartAction"
+                class="com.github.orangenbaumblatt.landotoolbox.actions.LandoStartAction" text="Start Lando for current project">
+        </action>
+
+        <group id="landotoolbox.actions.Menu" text="Lando" popup="true">
+            <reference id="landotoolbox.actions.LandoStartAction" />
+            <reference id="landotoolbox.actions.LandoToolingAction" />
+            <add-to-group group-id="ToolsMenu" anchor="last" />
+        </group>
     </actions>
 </idea-plugin>

@@ -20,9 +20,12 @@ class LandoToolingAction : AnAction() {
         val landoFile: VirtualFile? = fileSystem.findFileByPath("$basePath/.lando.yml")
 
         val popup = JBPopupFactory.getInstance()
-            .createListPopup(LandoToolingListPopupStep("Run Lando Tooling Command",
-                    commandList(landoBaseFile, e.project) + commandList(landoFile, e.project)
-            ))
+            .createListPopup(
+                LandoToolingListPopupStep(
+                "Run Lando Tooling Command",
+                commandList(landoBaseFile, e.project) + commandList(landoFile, e.project)
+                )
+            )
         popup.showInFocusCenter()
     }
 
@@ -31,7 +34,9 @@ class LandoToolingAction : AnAction() {
             if (file == null || project == null) return listOf()
 
             val psi = PsiManager.getInstance(project).findFile(file)
-            val commandsList = psi?.firstChild?.firstChild?.children?.firstOrNull { el -> el.text.contains("tooling") }?.lastChild?.children?.map { el -> el.firstChild.text }
+            val commandsList = psi?.firstChild?.firstChild?.children?.firstOrNull {
+                el -> el.text.contains("tooling")
+            }?.lastChild?.children?.map { el -> el.firstChild.text }
             return commandsList?.map { el -> LandoToolingItem(project, el) } ?: listOf()
         }
     }
