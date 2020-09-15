@@ -14,6 +14,8 @@
 
         <codeInsight.lineMarkerProvider language="yaml" implementationClass="com.github.orangenbaumblatt.landotoolbox.lineMarker.LandoRunLineMarkerContributor" />
         <codeInsight.lineMarkerProvider language="yaml" implementationClass="com.github.orangenbaumblatt.landotoolbox.proxyLineMarker.ProxyLineMarkerContributor" />
+
+        <editorNotificationProvider implementation="com.github.orangenbaumblatt.landotoolbox.editorNotifications.LandoEditorNotificationsProvider" />
     </extensions>
 
     <projectListeners>
